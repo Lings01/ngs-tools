@@ -134,6 +134,16 @@ _10X_V3 = SingleCellChemistry(
     ),
 )
 
+_C4 = SingleCellChemistry(
+    name='C4',
+    description='MGI C4 sequencing',
+    n=2,
+    strand=SequencingStrand.FORWARD,
+    cdna_parser=SubSequenceParser(SubSequenceDefinition(1)),
+    cell_barcode_parser=SubSequenceParser(SubSequenceDefinition(0, 0, 20)),
+    umi_parser=SubSequenceParser(SubSequenceDefinition(0, 20, 10)),
+)
+
 _10X_V3_ULTIMA = SingleCellChemistry(
     name='10xv3_Ultima',
     description='10x Genomics 3\' version 3 sequenced with Ultima',
@@ -336,7 +346,7 @@ _SPLITSEQ = SingleCellChemistry(
 _PLATE_SINGLE_CELL_CHEMISTRIES = [_SMARTSEQ_V2, _SMARTSEQ_V3, _BDWTA, _STORMSEQ]
 _DROPLET_SINGLE_CELL_CHEMISTRIES = [
     _DROPSEQ, _10X_V1, _10X_V2, _10X_V3, _10X_V3_ULTIMA, _10X_FB, _10X_ATAC,
-    _INDROPS_V1, _INDROPS_V2, _INDROPS_V3, _SURECELL, _SCI_FATE
+    _INDROPS_V1, _INDROPS_V2, _INDROPS_V3, _SURECELL, _SCI_FATE,_C4
 ]
 _OTHER_SINGLE_CELL_CHEMISTRIES = [_CELSEQ_V1, _CELSEQ_V2, _SCRBSEQ, _SPLITSEQ]
 SINGLE_CELL_CHEMISTRIES = (
